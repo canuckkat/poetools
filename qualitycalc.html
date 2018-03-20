@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POE Quality Calculator</title>
+
+<!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+<style type="text/css" data-styleid="style-jezvofrx">
+.style-jezvofrxitemsContainer {width:calc(100% - 0px);height:calc(100% - 0px);white-space:nowrap;display:inline-block;overflow:visible;position:relative;}
+.style-jezvofrxmoreContainer {overflow:visible;display:inherit;white-space:nowrap;width:auto;background-color:rgba(255, 255, 255, 1);border-radius:0;  }
+.style-jezvofrxdropWrapper {z-index:99999;display:block;opacity:1;visibility:hidden;position:absolute;margin-top:7px;}
+.style-jezvofrxdropWrapper[data-dropMode="dropUp"] {margin-top:0;margin-bottom:7px;}
+.style-jezvofrxrepeaterButton {height:100%;position:relative;box-sizing:border-box;display:inline-block;cursor:pointer;font:normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif ;}
+.style-jezvofrxrepeaterButton[data-state~="header"] a,.style-jezvofrxrepeaterButton[data-state~="header"] div {cursor:default !important;}
+.style-jezvofrxrepeaterButtonlinkElement {display:inline-block;height:100%;width:100%;}
+.style-jezvofrxrepeaterButton_gapper {padding:0 5px;}
+.style-jezvofrxrepeaterButtonlabel {display:inline-block;padding:0 10px;color:#A0A09F;transition:color 0.4s ease 0s;}
+.style-jezvofrxrepeaterButton[data-state~="drop"] {width:100%;display:block;}
+.style-jezvofrxrepeaterButton[data-state~="drop"] .style-jezvofrxrepeaterButtonlabel {padding:0 .5em;}
+.style-jezvofrxrepeaterButton[data-state~="over"] .style-jezvofrxrepeaterButtonlabel,.style-jezvofrxrepeaterButton[data-preview~="hover"] .style-jezvofrxrepeaterButtonlabel {color:#FFFFFF;transition:color 0.4s ease 0s;}
+.style-jezvofrxrepeaterButton[data-state~="selected"] .style-jezvofrxrepeaterButtonlabel,.style-jezvofrxrepeaterButton[data-preview~="active"] .style-jezvofrxrepeaterButtonlabel {color:#2F2E2E;transition:color 0.4s ease 0s;}
+</style>
+<style type="text/css">
+html {
+	background-color: rgb(47, 46, 46);
+	font-family: din-next-w01-light,din-next-w02-light,din-next-w10-light,Abel,sans-serif;
+}
+h1,.h1,h2,.h2,h3,.h3 {
+	color: #605e5e;
+}
+h1,.h1,h2,.h2 {
+	font: normal normal normal 40px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,Abel,sans-serif;
+}
+h1,.h1 {
+	text-transform: uppercase;
+}
+.wrapper {
+	width: 980px;
+	min-height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+header {
+	height: 115px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 980px;
+}
+.hdCntrCnt {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.site-name, .page-title {
+	word-wrap: break-word;
+	text-align: start;
+	pointer-events: none;
+	text-align: center;
+}
+footer {
+	bottom: auto;
+	position: absolute;
+	/*height: 207px;*/
+	height: 167px;
+	left: 0;
+	top: 615px;
+	width: 980px;
+}
+.content-wrap {
+	height: 500px;
+	left: 0;
+	position: absolute;
+	top: 115px;
+	width: 980px;
+}
+.content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.qCalcWrap {
+	/*position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	left: 0;*/
+	position: relative;
+    color: #ccc;
+}
+/*.page-title-wrap {
+    left: 335px;
+    width: 310px;
+    position: absolute;
+    top: 0px;
+}*/
+.page-title {
+	margin: 0;
+}
+.qCalc {
+	position: relative;
+}
+.qCalcVal {
+	color: #fff;
+}
+.qCurrTotalText {
+    /*left: 338px;*/
+    /*position: absolute;*/
+    /*top: 62px;*/
+    text-align: center;
+    /*width: 151px;*/
+}
+.add-btn {
+    /* position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    background-color: rgba(230, 222, 202, 1);
+    border: solid rgba(123, 115, 111, 1) 0px;
+    border-radius: 50px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    transition: border 0.4s ease 0s, background-color 0.4s ease 0s;
+    width: 2em;
+    height: 2em;
+    color: #000;
+    text-align: center;
+}
+.add-btn span {
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: .25em;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<header>
+		<div class="hdCntrCnt">
+			<h1 class="site-name">Kat's POE Tools</h1>
+		</div>
+<!-- <nav id="DrpDwnMn0-5s3" data-menuborder-y="0" data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0" data-drophposition="" data-dropalign="center" dir="ltr" class="style-jezvofrx" data-state="center notMobile" style="left: -1px; width: 980px; position: absolute; top: 76px; height: 29px;" data-dropmode="dropDown"><ul aria-label="Site navigation" role="navigation" id="DrpDwnMn0-5s3itemsContainer" class="style-jezvofrxitemsContainer" style="text-align: center;"><li data-direction="ltr" data-listposition="center" data-data-id="bmi14ij" class="style-jezvofrxrepeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn0-5s30" data-original-gap-between-text-and-btn="10" aria-hidden="false" style="width: 71px; height: 29px; position: relative; box-sizing: border-box; overflow: visible;"><a role="button" tabindex="0" aria-haspopup="false" data-listposition="center" href="https://canuckkat.wixsite.com/poetools" target="_self" id="DrpDwnMn0-5s30linkElement" class="style-jezvofrxrepeaterButtonlinkElement"><div class="style-jezvofrxrepeaterButton_gapper"><div id="DrpDwnMn0-5s30bg" class="style-jezvofrxrepeaterButtonbg" style="text-align: center;"><p id="DrpDwnMn0-5s30label" class="style-jezvofrxrepeaterButtonlabel" style="text-align: center; line-height: 29px;">HOME</p></div></div></a></li><li data-direction="ltr" data-listposition="center" data-data-id="bmi2085" class="style-jezvofrxrepeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn0-5s31" data-original-gap-between-text-and-btn="10" aria-hidden="false" style="width: 47px; height: 29px; position: relative; box-sizing: border-box; overflow: visible;"><a role="button" tabindex="0" aria-haspopup="false" data-listposition="center" href="https://canuckkat.wixsite.com/poetools/cv" target="_self" id="DrpDwnMn0-5s31linkElement" class="style-jezvofrxrepeaterButtonlinkElement"><div class="style-jezvofrxrepeaterButton_gapper"><div id="DrpDwnMn0-5s31bg" class="style-jezvofrxrepeaterButtonbg" style="text-align: center;"><p id="DrpDwnMn0-5s31label" class="style-jezvofrxrepeaterButtonlabel" style="text-align: center; line-height: 29px;">CV</p></div></div></a></li><li data-direction="ltr" data-listposition="center" data-data-id="bmi14fv" class="style-jezvofrxrepeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn0-5s32" data-original-gap-between-text-and-btn="11" aria-hidden="false" style="width: 132px; height: 29px; position: relative; box-sizing: border-box; overflow: visible;"><a role="button" tabindex="0" aria-haspopup="true" data-listposition="center" href="https://canuckkat.wixsite.com/poetools/calculators" target="_self" id="DrpDwnMn0-5s32linkElement" class="style-jezvofrxrepeaterButtonlinkElement"><div class="style-jezvofrxrepeaterButton_gapper"><div id="DrpDwnMn0-5s32bg" class="style-jezvofrxrepeaterButtonbg" style="text-align: center;"><p id="DrpDwnMn0-5s32label" class="style-jezvofrxrepeaterButtonlabel" style="text-align: center; line-height: 29px;">CALCULATORS</p></div></div></a></li><li data-direction="ltr" data-listposition="center" data-data-id="dataItem-jcg19vwz" class="style-jezvofrxrepeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn0-5s33" data-original-gap-between-text-and-btn="11" aria-hidden="false" style="width: 68px; height: 29px; position: relative; box-sizing: border-box; overflow: visible;"><a role="button" tabindex="0" aria-haspopup="false" data-listposition="center" href="https://canuckkat.wixsite.com/poetools/blog" target="_self" id="DrpDwnMn0-5s33linkElement" class="style-jezvofrxrepeaterButtonlinkElement"><div class="style-jezvofrxrepeaterButton_gapper"><div id="DrpDwnMn0-5s33bg" class="style-jezvofrxrepeaterButtonbg" style="text-align: center;"><p id="DrpDwnMn0-5s33label" class="style-jezvofrxrepeaterButtonlabel" style="text-align: center; line-height: 29px;">BLOG</p></div></div></a></li><li data-direction="ltr" data-listposition="center" data-data-id="bmiu62" class="style-jezvofrxrepeaterButton" data-state="menu  idle link notMobile" id="DrpDwnMn0-5s34" data-original-gap-between-text-and-btn="10" aria-hidden="false" style="width: 94px; height: 29px; position: relative; box-sizing: border-box; overflow: visible;"><a role="button" tabindex="0" aria-haspopup="false" data-listposition="center" href="https://canuckkat.wixsite.com/poetools/contact" target="_self" id="DrpDwnMn0-5s34linkElement" class="style-jezvofrxrepeaterButtonlinkElement"><div class="style-jezvofrxrepeaterButton_gapper"><div id="DrpDwnMn0-5s34bg" class="style-jezvofrxrepeaterButtonbg" style="text-align: center;"><p id="DrpDwnMn0-5s34label" class="style-jezvofrxrepeaterButtonlabel" style="text-align: center; line-height: 29px;">CONTACT</p></div></div></a></li><li data-listposition="center" class="style-jezvofrxrepeaterButton" data-state="menu  idle header notMobile" id="DrpDwnMn0-5s3__more__" data-original-gap-between-text-and-btn="10" aria-hidden="true" style="height: 0px; overflow: hidden; position: absolute;"><a role="button" tabindex="-1" aria-haspopup="true" data-listposition="center" id="DrpDwnMn0-5s3__more__linkElement" class="style-jezvofrxrepeaterButtonlinkElement"><div class="style-jezvofrxrepeaterButton_gapper"><div id="DrpDwnMn0-5s3__more__bg" class="style-jezvofrxrepeaterButtonbg" style="text-align: center;"><p id="DrpDwnMn0-5s3__more__label" class="style-jezvofrxrepeaterButtonlabel" style="text-align: center;">More</p></div></div></a></li></ul><div id="DrpDwnMn0-5s3moreButton" class="style-jezvofrxmoreButton"></div><nav data-drophposition="" data-dropalign="center" id="DrpDwnMn0-5s3dropWrapper" class="style-jezvofrxdropWrapper" style="visibility: hidden; left: 602px; right: auto; bottom: auto;"><ul id="DrpDwnMn0-5s3moreContainer" class="style-jezvofrxmoreContainer" style="visibility: hidden; left: 602px; right: auto;"></ul></nav></nav> -->
+	</header>
+	<footer>
+	</footer>
+	<div class="content-wrap">
+		<div class="content">
+			<div class="qCalcWrap">
+				<div class="page-title-wrap">
+					<h2 class="page-title">Quality Calculator</h2>
+				</div>
+				<div class="qCalc">
+					<p class="qCurrTotalText">Total Quality: <span class="qCurrTotal qCalcVal">0</span><br>Remaining: <span class="qRemaining qCalcVal">40</span></p>
+				</div><!-- /qCalc -->
+				<div class="add-btn"><span>+</span></div>
+			</div><!-- /qCalcWrap -->
+		</div><!-- /content -->
+	</div><!-- /content-wrap -->
+</div>
+
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
+<!-- Bootstrap JavaScript -->
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!-- <script src="Hello World"></script> -->
+</body>
+
+</html>
