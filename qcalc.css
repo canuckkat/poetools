@@ -1,0 +1,63 @@
+html { background-color: #2f2e2e; font-family: din-next-w01-light,din-next-w02-light,din-next-w10-light,Abel,sans-serif; }
+
+h1, .h1, h2, .h2, h3, .h3 { color: #605e5e; }
+
+h1, .h1, h2, .h2 { font: normal normal normal 40px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,Abel,sans-serif; }
+
+h1, .h1 { text-transform: uppercase; }
+
+.group:after { content: ""; display: table; clear: both; }
+
+.wrapper { width: 100%; min-height: 100%; position: relative; margin: 0 auto; }
+@media (min-width: 980px) { .wrapper { width: 980px; } }
+
+header { height: 115px; left: 0; position: absolute; top: 0; width: 100%; }
+@media (min-width: 980px) { header { width: 980px; } }
+
+.hdCntrCnt { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+
+.site-name, .page-title { word-wrap: break-word; text-align: start; pointer-events: none; text-align: center; }
+
+footer { bottom: auto; position: absolute; /*height: 207px;*/ height: 167px; left: 0; top: 615px; width: 100%; }
+@media (min-width: 980px) { footer { width: 980px; } }
+
+.content-wrap { height: 500px; left: 0; position: absolute; top: 115px; width: 100%; }
+@media (min-width: 980px) { .content-wrap { width: 980px; } }
+
+.content { bottom: 0; left: 0; position: absolute; right: 0; top: 0; }
+
+.qCalcWrap { color: #ccc; position: relative; }
+
+.page-title { margin: 0; }
+
+.qCalc { position: relative; }
+
+.qCalcVal { color: white; }
+
+.qCurrTotalText { text-align: center; }
+
+.circle-btn { background-color: #e6deca; border: solid #7b736f 0; border-radius: 50px; box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.2); color: white; margin: 0 auto; height: 2em; text-align: center; transition: border 0.4s ease 0s, background-color 0.4s ease 0s; width: 2em; }
+
+.circle-btn:hover { cursor: pointer; }
+
+.circle-btn span { font-size: 1.5em; font-weight: 700; padding: .25em; }
+
+.add-btn { background-color: #009900; }
+
+.del-btn { background-color: #cc0000; }
+
+.qItem { padding-bottom: 1.25em; margin: 0 auto; width: 150px; }
+
+.qItem input { border-radius: 0; font: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif; -webkit-appearance: none; -moz-appearance: none; background-color: transparent; box-sizing: border-box !important; color: white; border: 2px solid #919191; font-size: 1.25em; padding: 1em; margin: 0; max-width: 110px; min-height: 100%; text-align: center; text-overflow: ellipsis; }
+
+.qItem .del-btn { position: relative; margin: 0; right: 0; }
+
+.qItemInput { float: left; }
+
+.qItem .del-btn { float: right; top: 20px; }
+
+.qItem input:focus { border: 2px solid black; }
+
+.qItem input:not(:focus):invalid { border: solid 1px #ff4040; }
+
+.qItemText { display: none; }
